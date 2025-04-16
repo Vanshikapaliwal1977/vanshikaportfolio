@@ -1,6 +1,8 @@
 
 import { Eye } from "lucide-react";
 import SectionTitle from "../SectionTitle";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface CertificationCardProps {
   title: string;
@@ -12,7 +14,7 @@ interface CertificationCardProps {
 
 const CertificationCard = ({ title, issuer, issueDate, image, link }: CertificationCardProps) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+    <Card className="overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg">
       <div className="h-48 bg-gray-200 overflow-hidden relative group">
         <img
           src={image}
@@ -33,12 +35,22 @@ const CertificationCard = ({ title, issuer, issueDate, image, link }: Certificat
           </div>
         )}
       </div>
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-800 mb-1">{title}</h3>
-        <p className="text-gray-600 mb-2">{issuer}</p>
+      <CardHeader className="px-6 pt-6 pb-0">
+        <div className="flex items-center gap-4">
+          <Avatar className="h-10 w-10">
+            <AvatarImage src={image} alt={issuer} />
+            <AvatarFallback>{issuer.charAt(0)}</AvatarFallback>
+          </Avatar>
+          <div>
+            <h3 className="text-xl font-bold text-gray-800 mb-1">{title}</h3>
+            <p className="text-gray-600">{issuer}</p>
+          </div>
+        </div>
+      </CardHeader>
+      <CardContent className="px-6 pt-4 pb-6">
         <p className="text-sm text-gray-500">Issued: {issueDate}</p>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 
@@ -89,7 +101,7 @@ const Certifications = () => {
       
       <div className="text-center mt-12">
         <p className="text-gray-600 mb-6">
-          These are sample certifications. Actual certification data will be fetched from Supabase once integrated.
+          These are sample certifications. You can add your own certifications by connecting to Supabase.
         </p>
       </div>
     </div>

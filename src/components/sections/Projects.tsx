@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import SectionTitle from "../SectionTitle";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 
 interface ProjectCardProps {
   title: string;
@@ -14,7 +15,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, image, tags, githubUrl, liveUrl }: ProjectCardProps) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg">
+    <Card className="overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg">
       <div className="h-48 bg-gray-200 overflow-hidden">
         <img
           src={image}
@@ -22,8 +23,10 @@ const ProjectCard = ({ title, description, image, tags, githubUrl, liveUrl }: Pr
           className="w-full h-full object-cover object-center"
         />
       </div>
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-800 mb-2">{title}</h3>
+      <CardHeader className="p-6 pb-0">
+        <h3 className="text-xl font-bold text-gray-800">{title}</h3>
+      </CardHeader>
+      <CardContent className="p-6 pt-2">
         <p className="text-gray-600 mb-4">{description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.map((tag) => (
@@ -35,6 +38,8 @@ const ProjectCard = ({ title, description, image, tags, githubUrl, liveUrl }: Pr
             </span>
           ))}
         </div>
+      </CardContent>
+      <CardFooter className="p-6 pt-0">
         <div className="flex space-x-3">
           <a
             href={githubUrl}
@@ -57,8 +62,8 @@ const ProjectCard = ({ title, description, image, tags, githubUrl, liveUrl }: Pr
             </a>
           )}
         </div>
-      </div>
-    </div>
+      </CardFooter>
+    </Card>
   );
 };
 
@@ -112,7 +117,7 @@ const Projects = () => {
       
       <div className="text-center mt-12">
         <p className="text-gray-600 mb-6">
-          These are sample projects. Actual project data will be fetched from Supabase once integrated.
+          These are sample projects. You can add your own projects by connecting to Supabase.
         </p>
       </div>
     </div>
