@@ -17,8 +17,8 @@ const SkillLogo = ({ name, iconPath, className, ...props }: SkillLogoProps) => {
       )}
       {...props}
     >
-      <div className="bg-white p-4 rounded-lg shadow-md mb-3 w-16 h-16 flex items-center justify-center transition-transform hover:scale-110">
-        <img src={iconPath} alt={name} className="w-10 h-10" />
+      <div className="bg-white p-4 rounded-lg shadow-md mb-3 w-16 h-16 flex items-center justify-center transition-transform hover:scale-110 hover:shadow-lg">
+        <img src={iconPath} alt={name} className="w-10 h-10 object-contain" />
       </div>
       <span className="text-sm font-medium text-gray-700">{name}</span>
     </div>

@@ -27,21 +27,21 @@ const SkillCategory = ({ title, skills }: SkillCategoryProps) => {
 
 const Skills = () => {
   const frontendSkills = [
-    { name: "HTML", iconPath: "/placeholder.svg" },
-    { name: "CSS", iconPath: "/placeholder.svg" },
-    { name: "JavaScript", iconPath: "/placeholder.svg" },
-    { name: "ReactJS", iconPath: "/placeholder.svg" },
-    { name: "TailwindCSS", iconPath: "/placeholder.svg" },
+    { name: "HTML", iconPath: "/images/html.svg" },
+    { name: "CSS", iconPath: "/images/css.svg" },
+    { name: "JavaScript", iconPath: "/images/javascript.svg" },
+    { name: "ReactJS", iconPath: "/images/react.svg" },
+    { name: "TailwindCSS", iconPath: "/images/tailwind.svg" },
   ];
 
   const backendSkills = [
-    { name: "NodeJS", iconPath: "/placeholder.svg" },
-    { name: "Express", iconPath: "/placeholder.svg" },
+    { name: "NodeJS", iconPath: "/images/nodejs.svg" },
+    { name: "Express", iconPath: "/images/express.svg" },
   ];
 
   const databaseSkills = [
-    { name: "MongoDB", iconPath: "/placeholder.svg" },
-    { name: "Supabase", iconPath: "/placeholder.svg" },
+    { name: "MongoDB", iconPath: "/images/mongodb.svg" },
+    { name: "Supabase", iconPath: "/images/supabase.svg" },
   ];
 
   return (
